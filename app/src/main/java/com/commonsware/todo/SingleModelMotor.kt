@@ -8,4 +8,8 @@ class SingleModelMotor (
     ) : ViewModel() {
 
     fun getModel() = repo.find(modelId)
+
+    fun save(model: ToDoModel) {
+        repo.save(model)
+    }
 }

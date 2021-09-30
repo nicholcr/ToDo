@@ -5,11 +5,13 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_check_circle.xml" value="0.3921875" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.3921875" />
+        <entry key="app/src/main/res/drawable/ic_save.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/todo_display.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/layout/todo_edit.xml" value="0.33" />
         <entry key="app/src/main/res/layout/todo_roster.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/layout/todo_row.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/menu/actions_display.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/menu/actions_edit.xml" value="0.37604166666666666" />
       </map>
     </option>
   </component>
