@@ -24,6 +24,7 @@ class EditFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.actions_edit, menu)
+        menu.findItem(R.id.delete).isVisible = args.modelId != null
 
         super.onCreateOptionsMenu(menu, inflater)
     }
@@ -32,6 +33,10 @@ class EditFragment : Fragment() {
         when (item.itemId) {
             R.id.save -> {
                 save()
+                return true
+            }
+            R.id.delete -> {
+                delete()
                 return true
             }
         }
@@ -81,6 +86,11 @@ class EditFragment : Fragment() {
         findNavController().popBackStack()
     }
 
+    private fun navToList() {
+        hideKeyboard()
+        findNavController().popBackStack(R.id.rosterListFragment, false)
+    }
+
     private fun hideKeyboard() {
         view?.let {
             val imm = context?.getSystemService<InputMethodManager>()
@@ -90,5 +100,12 @@ class EditFragment : Fragment() {
                 InputMethodManager.HIDE_NOT_ALWAYS
             )
         }
+    }
+
+    private fun delete() {
+        val model = motor.getModel()
+
+        model?.let { motor.delete(it) }
+        navToList()
     }
 }
