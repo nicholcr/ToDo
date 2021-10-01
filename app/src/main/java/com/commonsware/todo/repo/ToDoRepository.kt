@@ -1,6 +1,11 @@
 package com.commonsware.todo.repo
 
-class ToDoRepository {
+import kotlinx.coroutines.CoroutineScope
+
+class ToDoRepository(
+  private val store: ToDoEntity.Store,
+  private val appScope: CoroutineScope
+) {
   var items = emptyList<ToDoModel>()
 
   fun save(model: ToDoModel) {
